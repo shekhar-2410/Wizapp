@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
-import { StyleSheet,Text,View,TextInput,TouchableOpacity} from 'react-native'
+import { StyleSheet, Text, View , TextInput,TouchableOpacity,StyleSheet} from 'react-native'
 
 class Inputs extends Component{
   state = {
+    username : '',
     email : '',
     password : ''
+  }
+  handleUsername = (Text) => {
+    this.setState({username : Text})
   }
   handleEmail = (Text) => {
     this.setState({email : Text})
@@ -12,12 +16,18 @@ class Inputs extends Component{
   handlePassword = (Test) => {
     this.setState({password : Text})
   }
-  login = (email,pass) => {
-    alert('email: ' + email + ' password: ' + pass)
+  Registration = (username,email,pass) => {
+    alert('username:' + username + 'email: ' + email + ' password: ' + pass)
   }
   render(){
     return(
       <View style ={styles.container} >
+        <TextInput style = {styles.Input}
+          underlineColorAndroid = "Transparent"
+          placeholder = 'Username'
+          placeholderTextColor = "#9a73ef"
+          autoCapitalize='none'
+          onChangeText={this.handleEmail}/>
         <TextInput style = {styles.Input}
           underlineColorAndroid = "Transparent"
           placeholder = 'Email'
@@ -32,15 +42,9 @@ class Inputs extends Component{
           onChangeText = {this.handlePassword}/> 
          <TouchableOpacity  
            style = {styles.submitButton}
-           onPress={()=>this.login(this.state.email,this.state.password)}>
-           <Text style = {styles.submitButtonText}> Submit </Text>
-          </TouchableOpacity>
-                               <Text>or</Text>
-           <TouchableOpacity  
-           style = {styles.submitButton}
-           onPress={()=>this.login(this.state.email,this.state.password)}>
-           <Text style = {styles.submitButtonText}> Create a New Account </Text>
-          </TouchableOpacity>
+           onPress={()=>this.Registration(this.username,this.state.email,this.state.password)}>
+           <Text style = {styles.submitButtonText}> Create Account </Text>
+           </TouchableOpacity>
       </View>
     )
   }

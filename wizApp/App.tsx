@@ -1,7 +1,7 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
-import HomeScreen from './src/presentation/screens/HomeScreen';
 import LoginScreen from './src/presentation/screens/LoginScreen';
+import HomeScreen from './src/presentation/screens/HomeScreen';
 
 const App = () => {
   return (
@@ -18,6 +18,7 @@ const App = () => {
 
 const styles = StyleSheet.create({
   sectionContainer: {
+    flex:1,
     marginTop: '50%',
     justifyContent: 'center',
     alignItems: 'center',
