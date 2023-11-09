@@ -1,72 +1,14 @@
-import React, { Component } from 'react'
-import { StyleSheet,Text,View,TextInput,TouchableOpacity} from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
 
-class Inputs extends Component{
-  state = {
-    email : '',
-    password : ''
-  }
-  handleEmail = (Text) => {
-    this.setState({email : Text})
-  }
-  handlePassword = (Test) => {
-    this.setState({password : Text})
-  }
-  login = (email,pass) => {
-    alert('email: ' + email + ' password: ' + pass)
-  }
-  render(){
-    return(
-      <View style ={styles.container} >
-        <TextInput style = {styles.Input}
-          underlineColorAndroid = "Transparent"
-          placeholder = 'Email'
-          placeholderTextColor = "#9a73ef"
-          autoCapitalize='none'
-          onChangeText={this.handleEmail}/>
-        <TextInput style = {styles.Input}
-          underlineColorAndroid = "Transparent"
-          placeholder = "Password"
-          placeholderTextColor = "#9a73ef"
-          autoCapitalize='none'
-          onChangeText = {this.handlePassword}/> 
-         <TouchableOpacity  
-           style = {styles.submitButton}
-           onPress={()=>this.login(this.state.email,this.state.password)}>
-           <Text style = {styles.submitButtonText}> Submit </Text>
-          </TouchableOpacity>
-                               <Text>or</Text>
-           <TouchableOpacity  
-           style = {styles.submitButton}
-           onPress={()=>this.login(this.state.email,this.state.password)}>
-           <Text style = {styles.submitButtonText}> Create a New Account </Text>
-          </TouchableOpacity>
-      </View>
-    )
-  }
+const LoginScreen = () => {
+  return (
+    <View>
+      <Text>LoginScreen</Text>
+    </View>
+  )
 }
 
+export default LoginScreen
 
-
-export default Inputs
-
-const styles = StyleSheet.create({
-  container: {
-     paddingTop: 23
-  },
-  input: {
-     margin: 15,
-     height: 40,
-     borderColor: '#7a42f4',
-     borderWidth: 1
-  },
-  submitButton: {
-     backgroundColor: '#7a42f4',
-     padding: 10,
-     margin: 15,
-     height: 40,
-  },
-  submitButtonText:{
-     color: 'white'
-  }
-})
+const styles = StyleSheet.create({})
